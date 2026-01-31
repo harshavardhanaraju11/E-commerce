@@ -6,7 +6,7 @@ export default function Cart() {
     const userId=localStorage.getItem("userId")
 
     const fetchCartItems = useCallback(async () => {
-        await axios.get("http://localhost:4000/api/cart",
+        await axios.get("https://e-commerce-atnw.onrender.com/api/cart",
             {params:{userId}}
         )
         .then((res)=>{

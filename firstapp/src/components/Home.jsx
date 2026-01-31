@@ -10,7 +10,7 @@ export default function Home() {
   const navigate=useNavigate()
 
   async function fetchProducts() {
-    axios.get("http://localhost:4000/api/product")
+    axios.get("https://e-commerce-atnw.onrender.com/api/product")
       .then((res) => {
         console.log(res.data)
         if (res.status == 200) {
@@ -38,7 +38,7 @@ Swal.fire({
 });
       return false
     }
-    axios.post("http://localhost:4000/api/cart/add",
+    axios.post("https://e-commerce-atnw.onrender.com/api/cart/add",
       {productId, quantity:1},
       {params:{userId}
     })
@@ -57,7 +57,7 @@ Swal.fire({
   }
 
   function deleteProduct(productId){
-    axios.delete(`http://localhost:4000/api/product/${productId}`)
+    axios.delete(`https://e-commerce-atnw.onrender.com/api/product/${productId}`)
       .then(res=>{
         if(res.status==200){
           alert("Product deleted successfully")
