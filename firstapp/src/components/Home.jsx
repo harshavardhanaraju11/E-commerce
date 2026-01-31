@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 export default function Home() {
   const [products, setProducts] = useState([])
@@ -28,7 +29,13 @@ export default function Home() {
     console.log(productId,role)
     const userId=localStorage.getItem("userId")
     if(!userId){
-      alert("Login first to access the products")
+      alert("")
+    
+Swal.fire({
+  title: "Good job!",
+  text: "You clicked the button!",
+  icon: "success"
+});
       return false
     }
     axios.post("http://localhost:4000/api/cart/add",
